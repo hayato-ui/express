@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>1_ローカルストレージ</title>
+	</head>
+	<body>
+		<h1>localStorage</h1>
+		<section>
+			<h2>保存</h2>
+			<p>key : <input id="key1" type="text"></p>
+			<p>value : <input id="value1" type="text"></p>
+			<p><button onclick="set1();">保存</button></p>
+		</section>
+		<section>
+		<h2>呼出</h2>
+		  <p>key : <input id="key2" type="text"></p>
+			<p><button onclick="get1();">呼出</button></p>
+			<p>value : <span id="value2"></span></p>
+		</section>
+		<section>
+			<h2>削除</h2>
+				<p>key : <input id="key3" type="text"></p>
+				<p><button onclick="remove1();">削除</button></p>
+			</section>
+		<section>
+			<h2>全削除</h2>
+				<p><button onclick="clear1();">全削除</button></p>
+		</section>
+		<script>
+			function set1() {
+				//データ保存
+				let key1 = document.getElementById("key1").value;
+				let value1 = document.getElementById("value1").value;
+				localStorage.setItem(key1, value1);
+			}
+			function get1() {
+				//データ呼出
+				let key2 = document.getElementById("key2").value;
+				let value2 = document.getElementById("value2");
+				value2.innerHTML = localStorage.getItem(key2);
+			}
+			function remove1() {
+				//データ削除
+				let key3 = document.getElementById("key3").value;
+				localStorage.removeItem(key3);
+			}
+			function clear1() {
+				//データクリア
+				localStorage.clear();
+			}
+		</script>
+	</body>
+</html>
